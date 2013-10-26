@@ -27,7 +27,7 @@ header
 {
     position: absolute;
     height: 80px;
-    width: 300px;
+    width: 495px;
     margin-top: 35px;
     border: 1px solid blue;
 }
@@ -36,7 +36,7 @@ header
 { 
     position: absolute;
     height: 80px;
-    width: 300px;
+    width: 495px;
     margin-top: 35px;
     margin-right: auto;
     right: 0;
@@ -47,7 +47,7 @@ header
 {
     position: relative;
     height: 250px;
-    border: 1px solid black;
+    background: rgb(90, 90, 90);
 }
 
 .menuBox
@@ -63,7 +63,83 @@ header
     left: 0;
     top: 0;
     bottom: 0;
-    border: 1px solid red;
+    border: 1px solid rgb(180, 180, 180);
+}
+
+.home
+{
+    position: relative;
+    height: 30px;
+    width: 200px;
+    font-size: small;
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+    background-color: orange;
+    border: 1px solid rgb(180, 180, 180);
+}
+
+.home:hover
+{
+    background-color: pink;
+}
+
+.shop
+{
+    position: relative;
+    height: 30px;
+    width: 200px;
+    font-size: small;
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+    background-color: orange;
+    border: 1px solid rgb(180, 180, 180);
+}
+
+.shop:hover
+{
+    background-color: pink;
+}
+
+.story
+{
+    position: relative;
+    height: 30px;
+    width: 200px;
+    font-size: small;
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+    background-color: orange;
+    border: 1px solid rgb(180, 180, 180);
+}
+
+.story:hover
+{
+    background-color: pink;
+}
+
+.picture
+{
+    position: relative;
+    height: 72px;
+    width: 200px;
+    background-color: red;
+    border: 1px solid rgb(180, 180, 180);
+}
+
+.diapo
+{
+    position: absolute;
+    height: 198px;
+    width: 796px;
+    margin-right: auto;
+    margin-top: auto;
+    right: 0;
+    top: 0;
+    background-color: green;
+    border: 1px solid rgb(180, 180, 180);
 }
 
 .contentContainer
