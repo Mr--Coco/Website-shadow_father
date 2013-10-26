@@ -66,7 +66,14 @@ header
     border: 1px solid rgb(180, 180, 180);
 }
 
-.home
+ul
+{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.menuStyle
 {
     position: relative;
     height: 30px;
@@ -79,43 +86,7 @@ header
     border: 1px solid rgb(180, 180, 180);
 }
 
-.home:hover
-{
-    background-color: pink;
-}
-
-.shop
-{
-    position: relative;
-    height: 30px;
-    width: 200px;
-    font-size: small;
-    text-align: center;
-    padding-top: 10px;
-    color: white;
-    background-color: orange;
-    border: 1px solid rgb(180, 180, 180);
-}
-
-.shop:hover
-{
-    background-color: pink;
-}
-
-.story
-{
-    position: relative;
-    height: 30px;
-    width: 200px;
-    font-size: small;
-    text-align: center;
-    padding-top: 10px;
-    color: white;
-    background-color: orange;
-    border: 1px solid rgb(180, 180, 180);
-}
-
-.story:hover
+.menuStyle:hover
 {
     background-color: pink;
 }
@@ -147,6 +118,69 @@ header
     position: relative;
     height: 1200px;
     border: 1px solid black;
+}
+
+.contentMain
+{
+    position: absolute;
+    height: 1200px;
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border: 1px solid red;
+}
+
+.contactMenu
+{
+    position: absolute;
+    height: 125px;
+    width: 250px;
+    top: 20px;
+    left: 20px;
+    border: 1px solid rgb(180, 180, 180);
+}
+
+.localisationMenu
+{
+    position: absolute;
+    height: 125px;
+    width: 250px;
+    top: 165px;
+    left: 20px;
+    border: 1px solid rgb(180, 180, 180);
+}
+
+.mainMenu
+{
+    position: absolute;
+    height: 1180px;
+    width: 700px;
+    top: 20px;
+    left: 300px;
+    border: 1px solid rgb(180, 180, 180);
+}
+
+.sideContent
+{
+    position: absolute;
+    height: 1180px;
+    width: 200px;
+    left: 500px;
+    border: 1px solid rgb(180, 180, 180);
+}
+
+.main
+{
+    position: absolute;
+    height: 1180px;
+    width: 500px;
+    border: 1px solid rgb(180, 180, 180);
 }
 
 .shadowFooter

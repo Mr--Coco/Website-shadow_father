@@ -2,7 +2,7 @@
 <script src="../ressources/angular.min.js"></script>
 <script type="text/javascript">
   function ctrl ($scope) {
-  $scope.ass = ["titi", "toto", "tata"
+  $scope.ass = ["ACCUEIL", "VITRINE", "CONDI EN QUELQUES MOTS"
   ];
   }
 
@@ -12,12 +12,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
     <link rel="stylesheet" href="../css/homepage.css"/>
     <link rel="icon" href="">
-    <title>Condi</title>
+    <title>MEDITERRANEAN DISTRIBUTION COMPANY</title>
   </head>
   <header>
     <div class="topLane">
       <div class="logo">
-	logo
+	MDC
       </div>
       <div class="slogan">
 	slogan
@@ -27,15 +27,11 @@
   <body>
     <div class="menuContainer">
       <div class="menuBox">
-	<div class="home">
-	  ACCUEIL
-	</div>
-	<div class="shop">
-	  VITRINE
-	</div>
-	<div class="story">
-	  CONDI EN QUELQUES MOTS
-	</div>
+	<ul ng-controller="ctrl">
+	  <li ng-repeat="cock in ass">
+	    <div class="menuStyle">{{cock}}</div>
+	  </li>
+	</ul>
 	<div class="picture">
 	  here goes a swag img
 	</div>
@@ -45,12 +41,22 @@
       </div>
     </div>
     <div class="contentContainer">
-      main
-      <ul ng-controller="ctrl">
-	<li ng-repeat="cock in ass">
-	  <div>{{cock}}</div>
-	</li>
-      </ul>
+      <div class="contentMain">
+	<div class="contactMenu">
+	  contact
+	</div>
+	<div class="localisationMenu">
+	  accès
+	</div>
+	<div class="mainMenu">
+	  <div class="sideContent">
+	    side content can be used for multiple things
+	  </div>
+	  <div class="main">
+	    main
+	  </div>
+	</div>
+      </div>
     </div>
   </body>
   <div class="shadowFooter">
