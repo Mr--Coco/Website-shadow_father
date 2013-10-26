@@ -4,17 +4,73 @@ html, body
     padding: 0;
 }
 
-footer
+header
 {
     position: relative;
-    height: 200px;
-    background-color: rgb(45, 45, 45);
-    padding: 10px 20px;
+    height: 150px;
+    border: 1px solid black;
 }
 
-.headerTitle
+.topLane
 {
-    float: right;
+    position: absolute;
+    height: 150px;
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    right: 0;
+    left: 0;
+    border: 1px solid red;
+}
+
+.logo
+{
+    position: absolute;
+    height: 80px;
+    width: 300px;
+    margin-top: 35px;
+    border: 1px solid blue;
+}
+
+.slogan
+{ 
+    position: absolute;
+    height: 80px;
+    width: 300px;
+    margin-top: 35px;
+    margin-right: auto;
+    right: 0;
+    border: 1px solid green;
+}
+
+.menuContainer
+{
+    position: relative;
+    height: 250px;
+    border: 1px solid black;
+}
+
+.menuBox
+{
+    position: absolute;
+    height: 200px;
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border: 1px solid red;
+}
+
+.contentContainer
+{
+    position: relative;
+    height: 1200px;
+    border: 1px solid black;
 }
 
 .shadowFooter
@@ -25,12 +81,26 @@ footer
     background: url("../images/pdp-ombre.jpg") no-repeat scroll 0% 0% transparent;
 }
 
+footer
+{
+    position: relative;
+    height: 250px;
+    background-color: rgb(45, 45, 45);
+}
+
 .footerLinks
 {
-    margin-top: 20px;
-    height: 150px;
-    width: 100%;
-    text-align: center;
+    position: absolute;
+    height: 200px;
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
     border: 1px solid rgb(108, 110, 119);
     background: rgb(90, 90, 90);
 }

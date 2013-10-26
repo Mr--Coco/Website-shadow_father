@@ -3,8 +3,8 @@
 <script type="text/javascript">
   function ctrl ($scope) {
   $scope.ass = ["titi", "toto", "tata"
-];
-}
+  ];
+  }
 
 </script>
 <html ng-app>
@@ -14,20 +14,33 @@
     <link rel="icon" href="">
     <title>Condi</title>
   </head>
-<ul ng-controller="ctrl">
-  <li ng-repeat="cock in ass">
-    <div>{{cock}}</div>
-  </li>
-</ul>
   <header>
-    <div class="headerTitle">
-      Vos besoins satisfait par nos soins
+    <div class="topLane">
+      <div class="logo">
+	logo
+      </div>
+      <div class="slogan">
+	slogan
+      </div>
     </div>
   </header>
   <body>
-    <div>bonjour</div>
+    <div class="menuContainer">
+      <div class="menuBox">
+	menu / diapo
+      </div>
+    </div>
+    <div class="contentContainer">
+      main
+      <ul ng-controller="ctrl">
+	<li ng-repeat="cock in ass">
+	  <div>{{cock}}</div>
+	</li>
+      </ul>
+    </div>
   </body>
-  <div class="shadowFooter"></div>
+  <div class="shadowFooter">
+  </div>
   <footer>
     <div class="footerLinks">
     </div>
