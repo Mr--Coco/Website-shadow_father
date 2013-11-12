@@ -46,6 +46,7 @@ header
 
 .slogan
 {
+    cursor: default;
     text-align: right;
     padding-top: 20px;
     padding-right: 50px;
@@ -53,6 +54,10 @@ header
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     color : #011B58;
     text-shadow: 1px 1px 7px #F9B042;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .menuContainer
@@ -88,6 +93,7 @@ ul
 .menuStyle
 {
     position: relative;
+    cursor: default;
     height: 30px;
     width: 250px;
     text-align: center;
@@ -95,6 +101,10 @@ ul
     color: #F9B042;
     background-color: rgb(45, 45, 45);
     font-family: "Trebuchet MS", Helvetica, sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -128,14 +138,6 @@ ul
     background-color: green;
 }
 
-.shadowHeader
-{
-    width: 1000px;
-    height: 20px;
-    margin: 0px auto;
-    background: url("../images/header-ombre.gif") no-repeat scroll 0% 0% transparent;
-}
-
 .contentContainer
 {
     position: relative;
@@ -145,7 +147,7 @@ ul
 .contentMain
 {
     position: absolute;
-    height: 1200px;
+    height: 1150px;
     width: 1000px;
     margin-right: auto;
     margin-left: auto;
@@ -155,15 +157,23 @@ ul
     left: 0;
     top: 0;
     bottom: 0;
-    border: 1px solid red;
+}
+
+.leftSideMenus
+{
+    float: left;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .contactMenu
 {
-    position: absolute;
     height: 125px;
     width: 250px;
-    top: 20px;
+    margin-top: 20px;
     border: 1px solid rgb(180, 180, 180);
 }
 
@@ -224,7 +234,7 @@ ul
 
 .contactImageText:hover
 {
-    color: rgb(45, 45, 45);
+    color: #000000;
 }
 
 .contactImageText:hover + .contactImageBack
@@ -255,30 +265,20 @@ ul
     background-color: #011B58;
 }
 
-.shadowColumn
-{
-    width: 250px;
-    height: 20px;
-    margin: 0px auto;
-    background: url("../images/colonne-ombre.jpg") no-repeat scroll 0% 0% transparent;
-}
-
 .localisationMenu
 {
-    position: absolute;
     height: 125px;
     width: 250px;
-    top: 165px;
+    margin-top: 15px;
     border: 1px solid rgb(180, 180, 180);
 }
 
 .mainMenu
 {
-    position: absolute;
-    height: 1180px;
+    float: right;
+    height: 1130px;
     width: 725px;
-    top: 20px;
-    left: 275px;
+    margin-top: 20px;
     border: 1px solid rgb(180, 180, 180);
 }
 
@@ -297,14 +297,6 @@ ul
     height: 1180px;
     width: 525px;
     border: 1px solid rgb(180, 180, 180);
-}
-
-.shadowFooter
-{
-    width: 1000px;
-    height: 20px;
-    margin: 0px auto;
-    background: url("../images/pdp-ombre.jpg") no-repeat scroll 0% 0% transparent;
 }
 
 footer
