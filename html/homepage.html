@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <script src="../ressources/angular.min.js"></script>
+<script type="text/javascript" src="../ressources/jquery-2.0.3.min.js"></script>
 <script type="text/javascript">
   function ctrl ($scope) {
   $scope.ass = ["Accueil", "Produits", "Condi en quelques mots"
   ];
   }
+  $(document).ready( function () {  $('.contactLink').on('click', function() {
+    $('.mainMenu').text('titi');
+  });
+});
 
 </script>
 <html ng-app>
@@ -59,7 +64,7 @@
       </div>
     </div>
     <div class="contactLink">
-      CONTACTEZ-NOUS
+      <button>CONTACTEZ-NOUS</button>
     </div>
 	</div>
 	<div class="localisationMenu">
