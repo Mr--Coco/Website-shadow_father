@@ -10,7 +10,7 @@ header
     height: 150px;
 }
 
-.topLane
+#topLane
 {
     position: absolute;
     height: 150px;
@@ -21,7 +21,7 @@ header
     left: 0;
 }
 
-.logoContainer
+#logoContainer
 {
     position: absolute;
     height: 140px;
@@ -29,12 +29,12 @@ header
     margin-top: 5px;
 }
 
-.logo
+#logo
 {
     padding-left: 50px;
 }
 
-.sloganContainer
+#sloganContainer
 {
     position: absolute;
     height: 80px;
@@ -44,11 +44,11 @@ header
     right: 0;
 }
 
-.slogan
+#slogan
 {
     cursor: default;
     text-align: right;
-    padding-top: 20px;
+    padding-top: 40px;
     padding-right: 50px;
     font-size: 50px;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
@@ -60,14 +60,14 @@ header
     user-select: none;
 }
 
-.menuContainer
+#menuContainer
 {
     position: relative;
     height: 250px;
     background: rgb(90, 90, 90);
 }
 
-.menuBox
+#menuBox
 {
     position: absolute;
     height: 200px;
@@ -85,7 +85,7 @@ header
 
 ul
 {
-    list-style-type: none;
+    list-style: none;
     padding: 0px;
     margin: 0px;
 }
@@ -93,6 +93,7 @@ ul
 .menuStyle
 {
     position: relative;
+    margin-left: -24px;
     cursor: default;
     height: 30px;
     width: 250px;
@@ -118,15 +119,16 @@ ul
     background-color: #011B58;
 }
 
-.picture
+#picture
 {
     position: relative;
     height: 80px;
     width: 250px;
+    margin-top: -10px;
     background-image: url('../images/containerBoatResize.jpg');
 }
 
-.diapo
+#diapo
 {
     position: absolute;
     height: 200px;
@@ -135,16 +137,15 @@ ul
     margin-top: auto;
     right: 0;
     top: 0;
-    background-color: green;
 }
 
-.contentContainer
+#contentContainer
 {
     position: relative;
     height: 1200px;
 }
 
-.contentMain
+#contentMain
 {
     position: absolute;
     height: 1150px;
@@ -159,7 +160,7 @@ ul
     bottom: 0;
 }
 
-.leftSideMenus
+#leftSideMenus
 {
     float: left;
     cursor: default;
@@ -169,7 +170,7 @@ ul
     user-select: none;
 }
 
-.contactMenu
+#contactMenu
 {
     height: 125px;
     width: 250px;
@@ -177,14 +178,14 @@ ul
     border: 1px solid rgb(180, 180, 180);
 }
 
-.contactImage
+#contactImage
 {
     position: relative;
     height: 95px;
     width: 250px;
 }
 
-.contactImageBack
+#contactImageBack
 {
     position: absolute;
     height: 95px;
@@ -198,12 +199,12 @@ ul
     transition: all 1s ease;
 }
 
-.contactImageBack:hover
+#contactImageBack:hover
 {
     opacity: 0.2;
 }
 
-.contactImageTextHeader
+#contactImageTextHeader
 {
     position: absolute;
     height: 25px;
@@ -215,7 +216,7 @@ ul
     font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
-.contactImageText
+#contactImageText
 {
     position: absolute;
     height: 55px;
@@ -232,17 +233,17 @@ ul
     transition: all 1s ease;
 }
 
-.contactImageText:hover
+#contactImageText:hover
 {
     color: #000000;
 }
 
-.contactImageText:hover + .contactImageBack
+#contactImageText:hover + #contactImageBack
 {
     opacity: 0.2;
 }
 
-.contactLink
+#contactLink
 {
     height: 23px;
     width: 250px;
@@ -259,13 +260,13 @@ ul
     transition: all 0.5s ease;
 }
 
-.contactLink:hover
+#contactLink:hover
 {
     transition-delay: 0.1s;
     background-color: #011B58;
 }
 
-.localisationMenu
+#localisationMenu
 {
     height: 125px;
     width: 250px;
@@ -273,7 +274,95 @@ ul
     border: 1px solid rgb(180, 180, 180);
 }
 
-.mainMenu
+#localisationImage
+{
+    position: relative;
+    height: 95px;
+    width: 250px;
+}
+
+#localisationImageBack
+{
+    position: absolute;
+    height: 95px;
+    width: 250px;
+    z-index: -1;
+    background-image: url('../images/plan.jpg');
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+#localisationImageBack:hover
+{
+    opacity: 0.2;
+}
+
+#localisationImageTextHeader
+{
+    position: absolute;
+    height: 25px;
+    width: 250px;
+    padding-top: 5px;
+    padding-left: 5px;
+    color: #F9B042;
+    font-weight: bold;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#localisationImageText
+{
+    position: absolute;
+    height: 55px;
+    width: 250px;
+    padding-top: 40px;
+    padding-left: 5px;
+    color: #FFFFFF;
+    font-size: small;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+#localisationImageText:hover
+{
+    color: #000000;
+}
+
+#localisationImageText:hover + #localisationImageBack
+{
+    opacity: 0.2;
+}
+
+#localisationLink
+{
+    height: 23px;
+    width: 250px;
+    text-align: center;
+    padding-top: 7px;
+    color: #F9B042;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: small;
+    background-color: rgb(45, 45, 45);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#localisationLink:hover
+{
+    transition-delay: 0.1s;
+    background-color: #011B58;
+}
+
+#mainMenu
 {
     float: right;
     height: 1130px;
@@ -282,7 +371,7 @@ ul
     border: 1px solid rgb(180, 180, 180);
 }
 
-.sideContent
+#sideContent
 {
     position: absolute;
     height: 1180px;
@@ -291,7 +380,7 @@ ul
     border: 1px solid rgb(180, 180, 180);
 }
 
-.main
+#main
 {
     position: absolute;
     height: 1180px;
@@ -306,7 +395,7 @@ footer
     background-color: rgb(45, 45, 45);
 }
 
-.footerLinks
+#footerLinks
 {
     position: absolute;
     height: 200px;
