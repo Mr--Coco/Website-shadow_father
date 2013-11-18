@@ -14,15 +14,60 @@ function carouselItems ($scope)
 }
 
 $(document).ready(function()
-{  
-  $('#myCarousel').carousel()
+{
+  $('#myCarousel').carousel(
+  {
+    interval: 4000
+  });
+
+  var $contentMainSize = 1000;
+  var $contentContainerSize = 775;
+  var $mainMenuSize = 725;
+
+  var $homeTitle = $('<div id="homeTitle">Mediterranean Distribution Company</div></br>');
+  var $homeSlogan = $('<div id="homeSlogan">Un slogan !</div></br>');
+  var $homePresentation = $('<div id="homePresentation">Bienvenue chez MDC, importateur-exportateur de produits agroalimentaires.</div></br>');
+  var $homePDG = $('<div id="homePDG">"Notre force, c\'est de disposer d\'un large éventail de compétences, de manière à proposer à nos clients une gamme étendue de produits agroalimentaires à faible coût et livrer dans les meilleurs délais."</br></br>Georges BENZAHRA, Directeur</div>');
+  var $vegetablesContainer = $('<div id="vegetablesContainer">link sur la vitrine avc seulement les légumes secs</div>');
+  var $fruitsContainer = $('<div id="fruitsContainer">link sur la vitrine avc seulement les fruits secs</div>');
+
+  var $contactUsTitle = $('<div id="contactUsTitle">Contactez-nous</div>');
+  var $contactUsText = $('<div id="contactUsText">Pour nous contacter vous trouverez nos coordonnées ci-dessous ou bien via notre formulaire. Nous vous répondrons dans les plus bref délais</br></br>Merci de votre intérêt pour MDC !</div>');
+  var $contactInfoTitle = $('<div id="contactInfoTitle">Nos coordonnées</div>');
+  var $contactInfoText = $('<div id="contactInfoText"><b>MDC</b></br>66, Avenue des Champs-Elysées Lot 41</br>75008 PARIS</br>Tél. : (+0033) 06 52 86 17 93</br>Fax : N/A</br>Mail : mdc.negoce@gmail.com</div>');
+  var $formulaire = $('<div id="formulaire">un formulaire en cours</div>');
+
+  $('#mainMenu').append($homeTitle, $homeSlogan, $homePresentation, $homePDG, $vegetablesContainer, $fruitsContainer);
+
+  $('#logoContainer').on('click', function()
+  {
+    $('#mainMenu').empty();
+    $('#contentMain').height($contentMainSize);
+    $('#contentContainer').height($contentContainerSize);
+    $('#mainMenu').height($mainMenuSize);
+    $('#mainMenu').append($homeTitle, $homeSlogan, $homePresentation, $homePDG, $vegetablesContainer, $fruitsContainer);
+  });
+  $('#menuStyle-0').on('click', function()
+  {
+    $('#mainMenu').empty();
+    $('#contentMain').height($contentMainSize);
+    $('#contentContainer').height($contentContainerSize);
+    $('#mainMenu').height($mainMenuSize);
+    $('#mainMenu').append($homeTitle, $homeSlogan, $homePresentation, $homePDG, $vegetablesContainer, $fruitsContainer);
+  });
   $('#contactMenu').on('click', function()
   {
-    $('#mainMenu').text('titi');
+    $('#mainMenu').empty();
+    $('#contentMain').height($contentMainSize + 200);
+    $('#contentContainer').height($contentContainerSize + 200);
+    $('#mainMenu').height($mainMenuSize + 200);
+    $('#mainMenu').append($homeTitle, $contactUsTitle, $contactUsText, $contactInfoTitle, $contactInfoText, $formulaire);
   });
+
   $('#localisationMenu').on('click', function()
   {
-    $('#mainMenu').text('tata');
+    $('#mainMenu').empty();
+    $('#mainMenu').append();
   });
 });
 </script>
@@ -44,7 +89,7 @@ $(document).ready(function()
       </div>
       <div id="sloganContainer">
         <div id="slogan">
-          Ceci est une phrase
+          Un slogan !
         </div>
       </div>
     </div>
@@ -54,13 +99,13 @@ $(document).ready(function()
       <div id="menuBox">
         <ul ng-controller="ctrl">
           <li ng-repeat="menu in box">
-            <div class="menuStyle">{{menu}}</div>
+            <div class="menuStyle" id="{{'menuStyle-' + $index}}">{{menu}}</div>
           </li>
         </ul>
         <div id="picture">
         </div>
         <div id="diapo">
-          <div id="myCarousel" class="carousel slide">
+          <div id="myCarousel" class="carousel slide carousel-fade">
             <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
               <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -69,24 +114,24 @@ $(document).ready(function()
             <!-- Carousel items -->
             <div class="carousel-inner">
               <div class="active item">
-                <img src="../images/MDC_Logo.gif" alt="">
+                <img src="../images/test.jpg" alt="">
                 <div class="carousel-caption">
-                  <h4>Second Thumbnail label</h4>
-                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                  <h4>Haricots Blanc</h4>
+                  <p>test zzzz</p>
                 </div>
               </div>
               <div class="item">
-                <img src="../images/MDC_Logo.gif" alt="">
+                <img src="../images/test.jpg" alt="">
                 <div class="carousel-caption">
-                  <h4>Second Thumbnail label</h4>
-                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                  <h4>Haricots Blanc</h4>
+                  <p>test zzzz</p>
                 </div>
               </div>
               <div class="item">
-                <img src="../images/MDC_Logo.gif" alt="">
+                <img src="../images/test.jpg" alt="">
                 <div class="carousel-caption">
-                  <h4>Second Thumbnail label</h4>
-                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                  <h4>Haricots Blanc</h4>
+                  <p>test zzzz</p>
                 </div>
               </div>
             </div>
@@ -134,7 +179,6 @@ $(document).ready(function()
           </div>
         </div>
         <div id="mainMenu">
-          main
         </div>
       </div>
     </div>
