@@ -2,6 +2,8 @@
 <script src="../ressources/angular.min.js"></script>
 <script type="text/javascript" src="../ressources/jquery-2.0.3.min.js"></script>
 <script src="../ressources/js/bootstrap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAU0D5HykW8a2Sc6TDlhJhExnI4dy9KVnM&sensor=false"></script>
+
 <script type="text/javascript">
 function ctrl ($scope)
 {
@@ -37,6 +39,10 @@ $(document).ready(function()
   var $contactInfoText = $('<div id="contactInfoText"><b>MDC</b></br>66, Avenue des Champs-Elysées Lot 41</br>75008 PARIS</br>Tél. : (+0033) 06 52 86 17 93</br>Fax : N/A</br>Mail : mdc.negoce@gmail.com</div>');
   var $formulaire = $('<div id="formulaire">un formulaire en cours</div>');
 
+  var $localisationTitle = $('<div id="localisationTitle">Plan d\'accés</div>');
+  var $localisationMap = $('<div id="localisationMap"></div>');
+  var $localisationRedirect = $('<div id="localisationRedirect">Agrandir le plan</div>');
+
   $('#mainMenu').append($homeTitle, $homeSlogan, $homePresentation, $homePDG, $vegetablesContainer, $fruitsContainer);
 
   $('#logoContainer').on('click', function()
@@ -67,7 +73,44 @@ $(document).ready(function()
   $('#localisationMenu').on('click', function()
   {
     $('#mainMenu').empty();
-    $('#mainMenu').append();
+    $('#contentMain').height($contentMainSize);
+    $('#contentContainer').height($contentContainerSize);
+    $('#mainMenu').height($mainMenuSize);
+    $('#mainMenu').append($localisationTitle, $localisationMap, $localisationRedirect);
+    var map;
+    var myLatLng = new google.maps.LatLng(48.87022, 2.30603)
+    var mapOptions =
+    {
+      zoom: 24,
+      center: myLatLng,
+      disableDefaultUI: true,
+      panControl: true,
+      zoomControl: true,
+      mapTypeControl: true,
+      scaleControl: true,
+      streetViewControl: true,
+      overviewMapControl: true
+    };
+    map = new google.maps.Map(document.getElementById('localisationMap'), mapOptions);
+
+    var windowContent = 'test';
+    var infoWindow = new google.maps.InfoWindow(
+    {
+      content: windowContent
+    });
+
+    var marker = new google.maps.Marker(
+    {
+      position: myLatLng,
+      map: map,
+      title: "MDC"
+    });
+
+    infoWindow.open(map, marker);
+    google.maps.event.addListener(marker, 'click', function()
+    {
+      infoWindow.open(map, marker);
+    });
   });
 });
 </script>
@@ -84,7 +127,7 @@ $(document).ready(function()
     <div id="topLane">
       <div id="logoContainer">
       	<div id="logo">
-	         <img src="../images/MDC_Logo.gif">
+	         <img src="../images/logo.gif">
       	</div>
       </div>
       <div id="sloganContainer">

@@ -39,7 +39,7 @@ header
     position: absolute;
     height: 80px;
     width: 495px;
-    margin-top: 35px;
+    margin-top: 25px;
     margin-right: auto;
     right: 0;
 }
@@ -125,7 +125,7 @@ ul
     height: 80px;
     width: 250px;
     margin-top: -10px;
-    background-image: url('../images/containerBoatResize.jpg');
+    background-image: url('../images/testswag.jpg');
 }
 
 #diapo
@@ -392,7 +392,7 @@ footer
     left: 0;
     top: 0;
     bottom: 0;
-    border: 1px solid rgb(108, 110, 119);
+    border: 1px solid rgb(180, 180, 180);
     background-color: rgb(60, 60, 60);
 }
 
@@ -496,6 +496,36 @@ footer
     width: 675px;
     border: 1px solid rgb(180, 180, 180);
 }
+
+#localisationTitle
+{
+    margin-top: 20px;
+    text-align: center;
+    color: #F9B042;
+    font-family: 'LeagueGothicRegular', Helvetica, sans-serif;
+    font-size: x-large;
+}
+
+#localisationMap
+{
+    margin-left: 25px;
+    margin-top: 50px;
+    height: 600px;
+    width: 675px;
+    border: 1px solid rgb(180, 180, 180);
+}
+
+#localisationRedirect
+{
+    margin-left: 25px;
+    margin-top: 5px;
+    cursor: default;
+}
+
+/*** CSS trick to remove visual glitch from google maps api FUCK THIS SHIT ***/
+
+.gm-style img { max-width: none; }
+.gm-style label { width: auto; display: inline; }
 
 /*** Carousel Fade Shit ***/
 
