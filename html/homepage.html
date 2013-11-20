@@ -22,61 +22,21 @@ $(document).ready(function()
     interval: 4000
   });
 
-  var $contentMainSize = 1000;
-  var $contentContainerSize = 775;
-  var $mainMenuSize = 725;
-
-  var $homeTitle = $('<div id="homeTitle">Mediterranean Distribution Company</div></br>');
-  var $homeSlogan = $('<div id="homeSlogan">Un slogan !</div></br>');
-  var $homePresentation = $('<div id="homePresentation">Bienvenue chez MDC, importateur-exportateur de produits agroalimentaires.</div></br>');
-  var $homePDG = $('<div id="homePDG">"Notre force, c\'est de disposer d\'un large éventail de compétences, de manière à proposer à nos clients une gamme étendue de produits agroalimentaires à faible coût et livrer dans les meilleurs délais."</br></br>Georges BENZAHRA, Directeur</div>');
-  var $vegetablesContainer = $('<div id="vegetablesContainer">link sur la vitrine avc seulement les légumes secs</div>');
-  var $fruitsContainer = $('<div id="fruitsContainer">link sur la vitrine avc seulement les fruits secs</div>');
-
-  var $contactUsTitle = $('<div id="contactUsTitle">Contactez-nous</div>');
-  var $contactUsText = $('<div id="contactUsText">Pour nous contacter vous trouverez nos coordonnées ci-dessous ou bien via notre formulaire. Nous vous répondrons dans les plus bref délais</br></br>Merci de votre intérêt pour MDC !</div>');
-  var $contactInfoTitle = $('<div id="contactInfoTitle">Nos coordonnées</div>');
-  var $contactInfoText = $('<div id="contactInfoText"><b>MDC</b></br>66, Avenue des Champs-Elysées Lot 41</br>75008 PARIS</br>Tél. : (+0033) 06 52 86 17 93</br>Fax : N/A</br>Mail : mdc.negoce@gmail.com</div>');
-  var $formulaire = $('<div id="formulaire">un formulaire en cours</div>');
-
-  var $localisationTitle = $('<div id="localisationTitle">Plan d\'accés</div>');
-  var $localisationMap = $('<div id="localisationMap"></div>');
-  var $localisationRedirect = $('<div id="localisationRedirect">Agrandir le plan</div>');
-
-  $('#mainMenu').append($homeTitle, $homeSlogan, $homePresentation, $homePDG, $vegetablesContainer, $fruitsContainer);
-
-  $('#logoContainer').on('click', function()
-  {
-    $('#mainMenu').empty();
-    $('#contentMain').height($contentMainSize);
-    $('#contentContainer').height($contentContainerSize);
-    $('#mainMenu').height($mainMenuSize);
-    $('#mainMenu').append($homeTitle, $homeSlogan, $homePresentation, $homePDG, $vegetablesContainer, $fruitsContainer);
+  $('#home2').hide();
+  $('#logoContainer').on('click', function() {
+    $('#home1').show();
+    $('#home2').hide();
   });
-  $('#menuStyle-0').on('click', function()
-  {
-    $('#mainMenu').empty();
-    $('#contentMain').height($contentMainSize);
-    $('#contentContainer').height($contentContainerSize);
-    $('#mainMenu').height($mainMenuSize);
-    $('#mainMenu').append($homeTitle, $homeSlogan, $homePresentation, $homePDG, $vegetablesContainer, $fruitsContainer);
+  $('#menuStyle-0').on('click', function() {
+    $('#home1').show();
+    $('#home2').hide();
   });
-  $('#contactMenu').on('click', function()
-  {
-    $('#mainMenu').empty();
-    $('#contentMain').height($contentMainSize + 200);
-    $('#contentContainer').height($contentContainerSize + 200);
-    $('#mainMenu').height($mainMenuSize + 200);
-    $('#mainMenu').append($homeTitle, $contactUsTitle, $contactUsText, $contactInfoTitle, $contactInfoText, $formulaire);
+  $('#contactMenu').on('click', function() {
+    $('#home2').show();
+    $('#home1').hide();
   });
-
-  $('#localisationMenu').on('click', function()
-  {
-    $('#mainMenu').empty();
-    $('#contentMain').height($contentMainSize);
-    $('#contentContainer').height($contentContainerSize);
-    $('#mainMenu').height($mainMenuSize);
-    $('#mainMenu').append($localisationTitle, $localisationMap, $localisationRedirect);
+  $('#localisationMenu').on('click', function () {
+    $('#myModal').modal();
     var map;
     var myLatLng = new google.maps.LatLng(48.87022, 2.30603)
     var mapOptions =
@@ -115,7 +75,8 @@ $(document).ready(function()
 });
 </script>
 
-<html ng-app>
+<html ng-app ng-controller="ctrl">
+
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
     <link rel="stylesheet" href="../css/homepage.css"/>
@@ -123,7 +84,9 @@ $(document).ready(function()
     <link rel="icon" href="">
     <title>MEDITERRANEAN DISTRIBUTION COMPANY</title>
   </head>
+
   <header>
+
     <div id="topLane">
       <div id="logoContainer">
       	<div id="logo">
@@ -132,21 +95,24 @@ $(document).ready(function()
       </div>
       <div id="sloganContainer">
         <div id="slogan">
-          Un slogan !
+          Nikos aliagas est un FDP
         </div>
       </div>
     </div>
+
   </header>
   <body>
     <div id="menuContainer">
+
       <div id="menuBox">
-        <ul ng-controller="ctrl">
+        <ul>
           <li ng-repeat="menu in box">
-            <div class="menuStyle" id="{{'menuStyle-' + $index}}">{{menu}}</div>
+            <div class="menuStyle" id="{{'menuStyle-' + $index}}" ng-bind="menu"></div>
           </li>
         </ul>
         <div id="picture">
         </div>
+
         <div id="diapo">
           <div id="myCarousel" class="carousel slide carousel-fade">
             <ol class="carousel-indicators">
@@ -166,15 +132,15 @@ $(document).ready(function()
               <div class="item">
                 <img src="../images/test.jpg" alt="">
                 <div class="carousel-caption">
-                  <h4>Haricots Blanc</h4>
-                  <p>test zzzz</p>
+                  <h4>Haricots Bleu</h4>
+                  <p>test yyyy</p>
                 </div>
               </div>
               <div class="item">
                 <img src="../images/test.jpg" alt="">
                 <div class="carousel-caption">
-                  <h4>Haricots Blanc</h4>
-                  <p>test zzzz</p>
+                  <h4>Haricots Rouge</h4>
+                  <p>test www</p>
                 </div>
               </div>
             </div>
@@ -183,10 +149,12 @@ $(document).ready(function()
             <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
           </div>
         </div>
+
       </div>
     </div>
     <div id="contentContainer">
       <div id="contentMain">
+
         <div id="leftSideMenus">
           <div id="contactMenu">
             <div id="contactImage">
@@ -221,8 +189,32 @@ $(document).ready(function()
             </div>
           </div>
         </div>
+
         <div id="mainMenu">
+
+          <!-- homepage -->
+          <div id="home1">
+            <div id="homeTitle">Mediterranean Distribution Company</div></br>
+            <div id="homeSlogan">Nikos aliagas est un FDP</div></br>
+            <div id="homePresentation">Bienvenue chez MDC, importateur-exportateur de produits agroalimentaires.</div></br>
+            <div id="homePDG">"Notre force, c'est de disposer d'un large éventail de compétences, de manière à proposer à nos clients une gamme étendue de produits agroalimentaires à faible coût et livrer dans les meilleurs délais."</br></br>Georges BENZAHRA, Directeur</div>
+
+            <div id="vegetablesContainer">link sur la vitrine avc seulement les légumes secs</div>
+            <div id="fruitsContainer">link sur la vitrine avc seulement les fruits secs</div>
+          </div>
+
+          <!-- page contact -->
+          <div id="home2">
+            <div id="homeTitle">Mediterranean Distribution Company</div></br>
+            <div id="contactUsTitle">Contactez-nous</div>
+            <div id="contactUsText">Pour nous contacter vous trouverez nos coordonnées ci-dessous ou bien via notre formulaire. Nous vous répondrons dans les plus bref délais</br></br>Merci de votre intérêt pour MDC !</div>
+            <div id="contactInfoTitle">Nos coordonnées</div>
+            <div id="contactInfoText"><b>MDC</b></br>66, Avenue des Champs-Elysées Lot 41</br>75008 PARIS</br>Tél. : (+0033) 06 52 86 17 93</br>Fax : N/A</br>Mail : mdc.negoce@gmail.com</div>
+            <div id="formulaire">un formulaire en cours</div>
+          </div>
+
         </div>
+
       </div>
     </div>
   </body>
@@ -231,4 +223,24 @@ $(document).ready(function()
       Liens et aide au référencement ici
     </div>
   </footer>
+
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Localisation</h4>
+      </div>
+      <div class="modal-body">
+        <div id="localisationTitle">Plan d'accés</div>
+        <div id="localisationMap"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </html>
