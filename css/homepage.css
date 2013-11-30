@@ -435,16 +435,17 @@ ul
 #vegetablesContainer
 {
     position: absolute;
+    background-image: url(../images/link_vegetables_store.jpg);
     height: 200px;
     width: 675px;
     margin-left: 25px;
     margin-top: 25px;
     border: 1px solid rgb(180, 180, 180);
-    background-color: green;
 }
 
 #fruitsContainer
 {
+    background-image: url(../images/link_fruit_store.jpg);
     position: absolute;
     height: 200px;
     width: 675px;
