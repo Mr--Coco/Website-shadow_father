@@ -533,7 +533,19 @@ div#footer {
 	position: relative;
 	background-color: rgb(60,60,60);
 	}
-
+/* Formulaire */
+.form p {
+	width: 50%;
+	}
+#left {
+	float : left;
+	}
+#right {
+	float : right;
+	}
+.civility label, .civility input {
+	display: inline-block;
+	}
 /*** CSS trick to remove visual glitch from google maps api FUCK THIS SHIT ***/
 
 .gm-style img { max-width: none; }
