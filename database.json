@@ -6,7 +6,9 @@
                    {
                         "name" : "fruit 1",
                         "image" : "images/fruit1.jpg",
-                        "description" : "lorem ipsum"
+                        "description" : "lorem ipsum",
+                        "type" : "fruit",
+                        "category" : "raisin"
                     }
                 ]
             },
@@ -14,8 +16,10 @@
                 "data" : [
                     {
                         "name" : "fruit 2",
-                        "image" : "images/fruit2.JPG",
-                        "description" : "lorem ipsum"
+                        "image" : "images/fruit2.jpg",
+                        "description" : "lorem ipsum",
+                        "type" : "fruit",
+                        "category" : "tomate"
                     }
                 ]
             }
@@ -26,7 +30,9 @@
                     {
                         "name" : "vegetable 1",
                         "image" : "images/vegetable1.jpg",
-                        "description" : "lorem ipsum"
+                        "description" : "lorem ipsum",
+                        "type" : "vegetable",
+                        "category" : "riz"
                     }
                 ]
             },
@@ -35,7 +41,9 @@
                     {
                         "name" : "vegetable 2",
                         "image" : "images/vegetable2.jpg",
-                        "description" : "lorem ipsum"
+                        "description" : "lorem ipsum",
+                        "type" : "vegetable",
+                        "category" : "haricot"
                     }
                 ]
             }

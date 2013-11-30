@@ -33,10 +33,19 @@
                 $scope.box = ["Accueil", "Produits", "MDC en quelques mots"];
                 $scope.selectedMenu = 0;
                 $scope.filter1 = "all";
+                $scope.filter2 = "all";
                 
                 $scope.selectPage = function (index, filter) {
                     $scope.selectedMenu = index;
                     $scope.filter1 = filter;
+                };
+                
+                $scope.selectFilter2 = function (filter) {
+                   $scope.filter2 = filter;
+                };
+                $scope.reset = function () {
+                    $scope.filter1 = "all";
+                    $scope.filter2 = "all";
                 };
             }
 
@@ -88,7 +97,7 @@
             <div id="topLane">
                 <div id="logoContainer">
                     <div id="logo">
-                        <img src="images/logo.gif">
+                        <img src="images/logo.gif" alt="">
                     </div>
                 </div>
                  <div id="sloganContainer">
@@ -203,21 +212,27 @@
                             <div>Mediterranean Distribution Company</div></br>
                             <div id="vitrineTitle">
                                 <ul>
-                                    <li ng-repeat="category in categoryData">
+                                    <li ng-click="reset()">
+                                         <div>All</div>
+                                    </li>
+                                    <li ng-click="selectPage(1, category)" ng-repeat="category in categoryData">
                                         <div ng-bind="category"></div>
                                     </li>
                                 </ul>
                                 <ul>
-                                    <li ng-repeat="type in typeData">
+                                    <li ng-click="selectFilter2('all')">
+                                         <div>All</div>
+                                    </li>
+                                    <li ng-click="selectFilter2(type)" ng-repeat="type in typeData">
                                         <div ng-bind="type"></div>
                                     </li>
                                 </ul>
                             </div>
                             <div id="vitrineContent">
                                 <ul>
-                                    <li ng-repeat="product in contentData">
+                                    <li ng-show="(product.type === filter1 || filter1 === 'all') && (product.category === filter2 || filter2 == 'all' )" ng-repeat="product in contentData">
                                         <div ng-bind="product.name"></div>
-                                        <img src="{{product.image}}" alt="">
+                                        <img ng-src="{{product.image}}" alt="">
                                         <div ng-bind="product.description"></div>
                                     </li>
                                 </ul>
@@ -239,6 +254,7 @@
                             <div id="contactInfoText"><b>MDC</b></br>66, Avenue des Champs-Elysées Lot 41</br>75008 PARIS</br>Tél. : (+0033) 06 52 86 17 93</br>Fax : N/A</br>Mail : mdc.negoce@gmail.com</div>
                             <div id="formulaire">un formulaire en cours</div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
