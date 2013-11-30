@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="css/homepage.css"/>
         <link rel="stylesheet" href="ressources/css/bootstrap.min.css">
         <link rel="icon" href="">
-        <title>MEDITERRANEAN DISTRIBUTION COMPANY</title>
+        <title>Mediterranean Distribution Company</title>
 
         <script src="ressources/angular.min.js"></script>
         <script type="text/javascript" src="ressources/jquery-2.0.3.min.js"></script>
@@ -13,9 +13,24 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAU0D5HykW8a2Sc6TDlhJhExnI4dy9KVnM&sensor=false"></script>
 
         <script type="text/javascript">
-            function ctrl ($scope) {
+            function ctrl ($scope, $http) {
+                $scope.contentData = [];
+                $scope.typeData = [];
+                $scope.categoryData = [];
+                $http({method: 'GET', url: 'database.json'}).success( function (data) {
+                    for (var item in data.category) {
+                        var category = data.category[item];
+                        $scope.categoryData.push(item);
+                        for (var field in category) {
+                            var type = category[field];
+                            $scope.typeData.push(field);
+                            for (var content in type.data) {
+                                $scope.contentData.push(type.data[content]);
+                            }
+                        }
+                    }
+                });
                 $scope.box = ["Accueil", "Produits", "MDC en quelques mots"];
-                $scope.item = [""];
                 $scope.selectedMenu = 0;
                 $scope.filter1 = "all";
                 
@@ -185,14 +200,34 @@
 
                         <!-- vitrine -->
                         <div id="home2" ng-show="selectedMenu === 1">
-                            <div id="homeTitle1">Mediterranean Distribution Company</div></br>
-                            <div id="homeSlogan">VITRINE</div></br>
+                            <div>Mediterranean Distribution Company</div></br>
+                            <div id="vitrineTitle">
+                                <ul>
+                                    <li ng-repeat="category in categoryData">
+                                        <div ng-bind="category"></div>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li ng-repeat="type in typeData">
+                                        <div ng-bind="type"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="vitrineContent">
+                                <ul>
+                                    <li ng-repeat="product in contentData">
+                                        <div ng-bind="product.name"></div>
+                                        <img src="{{product.image}}" alt="">
+                                        <div ng-bind="product.description"></div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         
                         <!-- history -->
                         <div id="home3" ng-show="selectedMenu === 2">
-                            <div id="homeTitle1">Mediterranean Distribution Company</div></br>
-                            <div id="homeSlogan">History</div></br>
+                            <div>Mediterranean Distribution Company</div></br>
+                            <div>History</div></br>
                         </div>
                         
                         <!-- page contact -->
