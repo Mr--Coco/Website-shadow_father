@@ -18,8 +18,10 @@
                 $scope.item = [""];
                 $scope.selectedMenu = 0;
                 
-                $scope.selectPage = function (index) {
-                    $scope.selectedMenu = index;  
+                $scope.selectPage = function (index, filter) {
+                    $scope.selectedMenu = index;
+                    if (typeof filter !== "undefined")
+                        console.log("yes");
                 };
             }
 
@@ -192,18 +194,14 @@
                             <div id="homeSlogan">Nikos aliagas est un FDP</div></br>
                             <div id="homePresentation">Bienvenue chez MDC, importateur-exportateur de produits agroalimentaires.</div></br>
                             <div id="homePDG">"Notre force, c'est de disposer d'un large éventail de compétences, de manière à proposer à nos clients une gamme étendue de produits agroalimentaires à faible coût et livrer dans les meilleurs délais."</br></br>Georges BENZAHRA, Directeur</div>
-                            <div id="vegetablesContainer"><p class="container-text">link sur la vitrine avc seulement les légumes secs</p></div>
-                            <div id="fruitsContainer"><p class="container-text">link sur la vitrine avc seulement les fruits secs</p></div>
+                            <div ng-click="selectPage(1, 'fruit')" id="vegetablesContainer"><p class="container-text">link sur la vitrine avc seulement les légumes secs</p></div>
+                            <div ng-click="selectPage(1, 'vegetable')" id="fruitsContainer"><p class="container-text">link sur la vitrine avc seulement les fruits secs</p></div>
                         </div>
 
                         <!-- vitrine -->
                         <div id="home2" ng-show="selectedMenu === 1">
                             <div id="homeTitle1">Mediterranean Distribution Company</div></br>
                             <div id="homeSlogan">VITRINE</div></br>
-                            <div id="homePresentation">Bienvenue chez MDC, importateur-exportateur de produits agroalimentaires.</div></br>
-                            <div id="homePDG">"Notre force, c'est de disposer d'un large éventail de compétences, de manière à proposer à nos clients une gamme étendue de produits agroalimentaires à faible coût et livrer dans les meilleurs délais."</br></br>Georges BENZAHRA, Directeur</div>
-                            <div id="vegetablesContainer"><p class="container-text">link sur la vitrine avc seulement les légumes secs</p></div>
-                            <div id="fruitsContainer"><p class="container-text">link sur la vitrine avc seulement les fruits secs</p></div>
                         </div>
                         
                         <!-- history -->
