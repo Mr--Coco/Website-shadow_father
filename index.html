@@ -16,6 +16,11 @@
             function ctrl ($scope) {
                 $scope.box = ["Accueil", "Produits", "MDC en quelques mots"];
                 $scope.item = [""];
+                $scope.selectedMenu = 0;
+                
+                $scope.selectPage = function (index) {
+                    $scope.selectedMenu = index;  
+                };
             }
 
             $(document).ready(function() {
@@ -23,20 +28,20 @@
                     interval: 4000
                 });
 
-                $('#home2').hide();
-                $('#logoContainer').on('click', function() {
-                    $('#home1').show();
-                    $('#home2').hide();
-                });
-                $('#menuStyle-0').on('click', function() {
-                    $('#home1').show();
-                    $('#home2').hide();
-                });
-                
-                $('#contactMenu').on('click', function() {
-                    $('#home2').show();
-                    $('#home1').hide();
-                });
+//                $('#home2').hide();
+//                $('#logoContainer').on('click', function() {
+//                    $('#home1').show();
+//                    $('#home2').hide();
+//                });
+//                $('#menuStyle-0').on('click', function() {
+//                    $('#home1').show();
+//                    $('#home2').hide();
+//                });
+//                
+//                $('#contactMenu').on('click', function() {
+//                    $('#home2').show();
+//                    $('#home1').hide();
+//                });
 
                 $('#localisationMenu').on('click', function () {
                     $('#myModal').modal();
@@ -97,7 +102,7 @@
                 <div id="menuBox">
                     <ul>
                         <li ng-repeat="menu in box">
-                            <div class="menuStyle" id="{{'menuStyle-' + $index}}" ng-bind="menu"></div>
+                            <div class="menuStyle" id="{{'menuStyle-' + $index}}" ng-click="selectPage($index)" ng-bind="menu"></div>
                         </li>
                     </ul>
                     <div id="picture">
@@ -145,7 +150,7 @@
             <div id="contentContainer">
                 <div id="contentMain">
                     <div id="leftSideMenus">
-                        <div id="contactMenu">
+                        <div id="contactMenu" ng-click="selectPage(42)">
                             <div id="contactImage">
                                 <div id="contactImageTextHeader">
                                     Contactez-nous</br>
@@ -182,7 +187,7 @@
                     <div id="mainMenu">
 
                         <!-- homepage -->
-                        <div id="home1">
+                        <div id="home1" ng-show="selectedMenu === 0">
                             <div id="homeTitle1">Mediterranean Distribution Company</div></br>
                             <div id="homeSlogan">Nikos aliagas est un FDP</div></br>
                             <div id="homePresentation">Bienvenue chez MDC, importateur-exportateur de produits agroalimentaires.</div></br>
@@ -191,8 +196,24 @@
                             <div id="fruitsContainer"><p class="container-text">link sur la vitrine avc seulement les fruits secs</p></div>
                         </div>
 
+                        <!-- vitrine -->
+                        <div id="home2" ng-show="selectedMenu === 1">
+                            <div id="homeTitle1">Mediterranean Distribution Company</div></br>
+                            <div id="homeSlogan">VITRINE</div></br>
+                            <div id="homePresentation">Bienvenue chez MDC, importateur-exportateur de produits agroalimentaires.</div></br>
+                            <div id="homePDG">"Notre force, c'est de disposer d'un large éventail de compétences, de manière à proposer à nos clients une gamme étendue de produits agroalimentaires à faible coût et livrer dans les meilleurs délais."</br></br>Georges BENZAHRA, Directeur</div>
+                            <div id="vegetablesContainer"><p class="container-text">link sur la vitrine avc seulement les légumes secs</p></div>
+                            <div id="fruitsContainer"><p class="container-text">link sur la vitrine avc seulement les fruits secs</p></div>
+                        </div>
+                        
+                        <!-- history -->
+                        <div id="home3" ng-show="selectedMenu === 2">
+                            <div id="homeTitle1">Mediterranean Distribution Company</div></br>
+                            <div id="homeSlogan">History</div></br>
+                        </div>
+                        
                         <!-- page contact -->
-                        <div id="home2">
+                        <div id="home2" ng-show="selectedMenu === 42">
                             <div id="homeTitle2">Mediterranean Distribution Company</div></br>
                             <div id="contactUsTitle">Contactez-nous</div>
                             <div id="contactUsText">Pour nous contacter vous trouverez nos coordonnées ci-dessous ou bien via notre formulaire. Nous vous répondrons dans les plus bref délais</br></br>Merci de votre intérêt pour MDC !</div>
