@@ -92,117 +92,118 @@
             </div>
         </div>
   
-        <div id="menuContainer">
-            <div id="menuBox">
-                <ul>
-                    <li ng-repeat="menu in box">
-                        <div class="menuStyle" id="{{'menuStyle-' + $index}}" ng-bind="menu"></div>
-                    </li>
-                </ul>
-                <div id="picture">
-                </div>
+        <div id="body">
+            <div id="menuContainer">
+                <div id="menuBox">
+                    <ul>
+                        <li ng-repeat="menu in box">
+                            <div class="menuStyle" id="{{'menuStyle-' + $index}}" ng-bind="menu"></div>
+                        </li>
+                    </ul>
+                    <div id="picture">
+                    </div>
 
-                <div id="diapo">
-                    <div id="myCarousel" class="carousel slide carousel-fade">
-                        <ol class="carousel-indicators">
-                          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                          <li data-target="#myCarousel" data-slide-to="1"></li>
-                          <li data-target="#myCarousel" data-slide-to="2"></li>
-                        </ol>
-                        <!-- Carousel items -->
-                        <div class="carousel-inner">
-                            <div class="active item">
-                                <img src="images/test.jpg" alt="">
-                                <div class="carousel-caption">
-                                    <h4>Haricots Blanc</h4>
-                                    <p>test zzzz</p>
+                    <div id="diapo">
+                        <div id="myCarousel" class="carousel slide carousel-fade">
+                            <ol class="carousel-indicators">
+                              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                              <li data-target="#myCarousel" data-slide-to="1"></li>
+                              <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                                <div class="active item">
+                                    <img src="images/test.jpg" alt="">
+                                    <div class="carousel-caption">
+                                        <h4>Haricots Blanc</h4>
+                                        <p>test zzzz</p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="images/test.jpg" alt="">
+                                    <div class="carousel-caption">
+                                        <h4>Haricots Bleu</h4>
+                                        <p>test yyyy</p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="images/test.jpg" alt="">
+                                    <div class="carousel-caption">
+                                        <h4>Haricots Rouge</h4>
+                                        <p>test www</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <img src="images/test.jpg" alt="">
-                                <div class="carousel-caption">
-                                    <h4>Haricots Bleu</h4>
-                                    <p>test yyyy</p>
+                            <!-- Carousel nav -->
+                            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contentContainer">
+                <div id="contentMain">
+                    <div id="leftSideMenus">
+                        <div id="contactMenu">
+                            <div id="contactImage">
+                                <div id="contactImageTextHeader">
+                                    Contactez-nous</br>
+                                </div>
+                                <div id="contactImageText">
+                                    Vous souhaitez passer commande ?</br>
+                                    Vous voulez de plus ample informations ?</br>
+                                </div>
+                                <div id="contactImageBack">
                                 </div>
                             </div>
-                            <div class="item">
-                                <img src="images/test.jpg" alt="">
-                                <div class="carousel-caption">
-                                    <h4>Haricots Rouge</h4>
-                                    <p>test www</p>
-                                </div>
+                            <div id="contactLink">
+                                CONTACTEZ-NOUS
                             </div>
                         </div>
-                        <!-- Carousel nav -->
-                        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-                        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                        <div id="localisationMenu">
+                            <div id="localisationImage">
+                                <div id="localisationImageTextHeader">
+                                    Plan d'accès
+                                </div>
+                                <div id="localisationImageText">
+                                    Vous allez être re-dirigé<br/>
+                                    vers Google Maps ...<br/>
+                                </div>
+                                <div id="localisationImageBack">
+                                </div>
+                            </div>
+                            <div id="localisationLink">
+                                PLAN D'ACCÉS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="mainMenu">
+
+                        <!-- homepage -->
+                        <div id="home1">
+                            <div id="homeTitle1">Mediterranean Distribution Company</div></br>
+                            <div id="homeSlogan">Nikos aliagas est un FDP</div></br>
+                            <div id="homePresentation">Bienvenue chez MDC, importateur-exportateur de produits agroalimentaires.</div></br>
+                            <div id="homePDG">"Notre force, c'est de disposer d'un large éventail de compétences, de manière à proposer à nos clients une gamme étendue de produits agroalimentaires à faible coût et livrer dans les meilleurs délais."</br></br>Georges BENZAHRA, Directeur</div>
+                            <div id="vegetablesContainer">link sur la vitrine avc seulement les légumes secs</div>
+                            <div id="fruitsContainer">link sur la vitrine avc seulement les fruits secs</div>
+                        </div>
+
+                        <!-- page contact -->
+                        <div id="home2">
+                            <div id="homeTitle2">Mediterranean Distribution Company</div></br>
+                            <div id="contactUsTitle">Contactez-nous</div>
+                            <div id="contactUsText">Pour nous contacter vous trouverez nos coordonnées ci-dessous ou bien via notre formulaire. Nous vous répondrons dans les plus bref délais</br></br>Merci de votre intérêt pour MDC !</div>
+                            <div id="contactInfoTitle">Nos coordonnées</div>
+                            <div id="contactInfoText"><b>MDC</b></br>66, Avenue des Champs-Elysées Lot 41</br>75008 PARIS</br>Tél. : (+0033) 06 52 86 17 93</br>Fax : N/A</br>Mail : mdc.negoce@gmail.com</div>
+                            <div id="formulaire">un formulaire en cours</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <div id="contentContainer">
-            <div id="contentMain">
-                <div id="leftSideMenus">
-                    <div id="contactMenu">
-                        <div id="contactImage">
-                            <div id="contactImageTextHeader">
-                                Contactez-nous</br>
-                            </div>
-                            <div id="contactImageText">
-                                Vous souhaitez passer commande ?</br>
-                                Vous voulez de plus ample informations ?</br>
-                            </div>
-                            <div id="contactImageBack">
-                            </div>
-                        </div>
-                        <div id="contactLink">
-                            CONTACTEZ-NOUS
-                        </div>
-                    </div>
-                    <div id="localisationMenu">
-                        <div id="localisationImage">
-                            <div id="localisationImageTextHeader">
-                                Plan d'accès
-                            </div>
-                            <div id="localisationImageText">
-                                Vous allez être re-dirigé<br/>
-                                vers Google Maps ...<br/>
-                            </div>
-                            <div id="localisationImageBack">
-                            </div>
-                        </div>
-                        <div id="localisationLink">
-                            PLAN D'ACCÉS
-                        </div>
-                    </div>
-                </div>
-
-                <div id="mainMenu">
-
-                    <!-- homepage -->
-                    <div id="home1">
-                        <div id="homeTitle1">Mediterranean Distribution Company</div></br>
-                        <div id="homeSlogan">Nikos aliagas est un FDP</div></br>
-                        <div id="homePresentation">Bienvenue chez MDC, importateur-exportateur de produits agroalimentaires.</div></br>
-                        <div id="homePDG">"Notre force, c'est de disposer d'un large éventail de compétences, de manière à proposer à nos clients une gamme étendue de produits agroalimentaires à faible coût et livrer dans les meilleurs délais."</br></br>Georges BENZAHRA, Directeur</div>
-                        <div id="vegetablesContainer">link sur la vitrine avc seulement les légumes secs</div>
-                        <div id="fruitsContainer">link sur la vitrine avc seulement les fruits secs</div>
-                    </div>
-
-                    <!-- page contact -->
-                    <div id="home2">
-                        <div id="homeTitle2">Mediterranean Distribution Company</div></br>
-                        <div id="contactUsTitle">Contactez-nous</div>
-                        <div id="contactUsText">Pour nous contacter vous trouverez nos coordonnées ci-dessous ou bien via notre formulaire. Nous vous répondrons dans les plus bref délais</br></br>Merci de votre intérêt pour MDC !</div>
-                        <div id="contactInfoTitle">Nos coordonnées</div>
-                        <div id="contactInfoText"><b>MDC</b></br>66, Avenue des Champs-Elysées Lot 41</br>75008 PARIS</br>Tél. : (+0033) 06 52 86 17 93</br>Fax : N/A</br>Mail : mdc.negoce@gmail.com</div>
-                        <div id="formulaire">un formulaire en cours</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-  
         <div id="footer">
             <div id="footerLinks">
                 Liens et aide au référencement ici
