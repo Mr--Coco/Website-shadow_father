@@ -12,7 +12,6 @@ header
 
 #topLane
 {
-    position: absolute;
     height: 150px;
     width: 1000px;
     margin-right: auto;
@@ -371,7 +370,7 @@ ul
     border: 1px solid rgb(180, 180, 180);
 }
 
-footer
+#footer
 {
     position: relative;
     height: 250px;
@@ -521,6 +520,12 @@ footer
     margin-top: 5px;
     cursor: default;
 }
+
+/* Footer */
+div#footer {
+	position: relative;
+	background-color: rgb(60,60,60);
+	}
 
 /*** CSS trick to remove visual glitch from google maps api FUCK THIS SHIT ***/
 
