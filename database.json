@@ -1,0 +1,28 @@
+{
+    "category" : {
+        "fruit" :  [
+            {
+                "name" : "fruit 1",
+                "image" : "images/fruit1",
+                "description" : "lorem ipsum"
+            },
+            {
+                "name" : "fruit 2",
+                "image" : "images/fruit2",
+                "description" : "lorem ipsum"
+            }
+        ],
+        "vegetable" : [
+            {
+                "name" : "vegetable 1",
+                "image" : "images/vegetable1",
+                "description" : "lorem ipsum"
+            },
+            {
+                "name" : "vegetable 2",
+                "image" : "images/vegetable2",
+                "description" : "lorem ipsum"
+            }
+        ]
+    }
+}
