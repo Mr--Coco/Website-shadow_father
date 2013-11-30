@@ -144,6 +144,11 @@ ul
     height: 960px;
 }
 
+.container-text {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
 #contentMain
 {
     position: absolute;
