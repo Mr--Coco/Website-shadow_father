@@ -507,6 +507,7 @@ ul
 
 #localisationMap
 {
+	display : none;
     margin-left: 25px;
     margin-top: 50px;
     height: 600px;
