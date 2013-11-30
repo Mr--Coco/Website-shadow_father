@@ -102,7 +102,7 @@
                 </div>
                  <div id="sloganContainer">
                     <div id="slogan">
-                        Nikos aliagas est un FDP
+                        Slogan !
                     </div>
                 </div>
             </div>
@@ -200,7 +200,7 @@
                         <!-- homepage -->
                         <div id="home1" ng-show="selectedMenu === 0">
                             <div id="homeTitle1">Mediterranean Distribution Company</div></br>
-                            <div id="homeSlogan">Nikos aliagas est un FDP</div></br>
+                            <div id="homeSlogan">Slogan !</div></br>
                             <div id="homePresentation">Bienvenue chez MDC, importateur-exportateur de produits agroalimentaires.</div></br>
                             <div id="homePDG">"Notre force, c'est de disposer d'un large éventail de compétences, de manière à proposer à nos clients une gamme étendue de produits agroalimentaires à faible coût et livrer dans les meilleurs délais."</br></br>Georges BENZAHRA, Directeur</div>
                             <div ng-click="selectPage(1, 'fruit')" id="vegetablesContainer"><p class="container-text">link sur la vitrine avc seulement les légumes secs</p></div>
@@ -231,9 +231,11 @@
                             <div id="vitrineContent">
                                 <ul>
                                     <li ng-show="(product.type === filter1 || filter1 === 'all') && (product.category === filter2 || filter2 == 'all' )" ng-repeat="product in contentData">
-                                        <div ng-bind="product.name"></div>
-                                        <img ng-src="{{product.image}}" alt="">
-                                        <div ng-bind="product.description"></div>
+                                        <div class="vitrineItem">
+                                            <div class="vitrineName" ng-bind="product.name"></div>
+                                            <img class="vitrineImage" src="{{product.image}}" alt="">
+                                            <div class="vitrineDescription" ng-bind="product.description"></div>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
