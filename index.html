@@ -233,7 +233,7 @@
                                     <li ng-show="(product.type === filter1 || filter1 === 'all') && (product.category === filter2 || filter2 == 'all' )" ng-repeat="product in contentData">
                                         <div class="vitrineItem">
                                             <div class="vitrineName" ng-bind="product.name"></div>
-                                            <img class="vitrineImage" src="{{product.image}}" alt="">
+                                            <img class="vitrineImage" ng-src="{{product.image}}" alt="">
                                             <div class="vitrineDescription" ng-bind="product.description"></div>
                                         </div>
                                     </li>
