@@ -1,246 +1,231 @@
 <!DOCTYPE html>
-<script src="../ressources/angular.min.js"></script>
-<script type="text/javascript" src="../ressources/jquery-2.0.3.min.js"></script>
-<script src="../ressources/js/bootstrap.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAU0D5HykW8a2Sc6TDlhJhExnI4dy9KVnM&sensor=false"></script>
-
-<script type="text/javascript">
-function ctrl ($scope)
-{
-  $scope.box = ["Accueil", "Produits", "MDC en quelques mots"];
-}
-
-function carouselItems ($scope)
-{
-  $scope.item = [""];
-}
-
-$(document).ready(function()
-{
-  $('#myCarousel').carousel(
-  {
-    interval: 4000
-  });
-
-  $('#home2').hide();
-  $('#logoContainer').on('click', function() {
-    $('#home1').show();
-    $('#home2').hide();
-  });
-  $('#menuStyle-0').on('click', function() {
-    $('#home1').show();
-    $('#home2').hide();
-  });
-  $('#contactMenu').on('click', function() {
-    $('#home2').show();
-    $('#home1').hide();
-  });
-  $('#localisationMenu').on('click', function () {
-    $('#myModal').modal();
-    var map;
-    var myLatLng = new google.maps.LatLng(48.87022, 2.30603)
-    var mapOptions =
-    {
-      zoom: 24,
-      center: myLatLng,
-      disableDefaultUI: true,
-      panControl: true,
-      zoomControl: true,
-      mapTypeControl: true,
-      scaleControl: true,
-      streetViewControl: true,
-      overviewMapControl: true
-    };
-    map = new google.maps.Map(document.getElementById('localisationMap'), mapOptions);
-
-    var windowContent = 'test';
-    var infoWindow = new google.maps.InfoWindow(
-    {
-      content: windowContent
-    });
-
-    var marker = new google.maps.Marker(
-    {
-      position: myLatLng,
-      map: map,
-      title: "MDC"
-    });
-
-    infoWindow.open(map, marker);
-    google.maps.event.addListener(marker, 'click', function()
-    {
-      infoWindow.open(map, marker);
-    });
-  });
-});
-</script>
-
 <html ng-app ng-controller="ctrl">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="../css/homepage.css"/>
+        <link rel="stylesheet" href="../ressources/css/bootstrap.min.css">
+        <link rel="icon" href="">
+        <title>MEDITERRANEAN DISTRIBUTION COMPANY</title>
 
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-    <link rel="stylesheet" href="../css/homepage.css"/>
-     <link rel="stylesheet" href="../ressources/css/bootstrap.min.css">
-    <link rel="icon" href="">
-    <title>MEDITERRANEAN DISTRIBUTION COMPANY</title>
-  </head>
+        <script src="../ressources/angular.min.js"></script>
+        <script type="text/javascript" src="../ressources/jquery-2.0.3.min.js"></script>
+        <script src="../ressources/js/bootstrap.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAU0D5HykW8a2Sc6TDlhJhExnI4dy9KVnM&sensor=false"></script>
 
-  <header>
+        <script type="text/javascript">
+            function ctrl ($scope) {
+                $scope.box = ["Accueil", "Produits", "MDC en quelques mots"];
+                $scope.item = [""];
+            }
 
-    <div id="topLane">
-      <div id="logoContainer">
-      	<div id="logo">
-	         <img src="../images/logo.gif">
-      	</div>
-      </div>
-      <div id="sloganContainer">
-        <div id="slogan">
-          Nikos aliagas est un FDP
-        </div>
-      </div>
-    </div>
+            $(document).ready(function() {
+                $('#myCarousel').carousel( {
+                    interval: 4000
+                });
 
-  </header>
-  <body>
-    <div id="menuContainer">
+                $('#home2').hide();
+                $('#logoContainer').on('click', function() {
+                    $('#home1').show();
+                    $('#home2').hide();
+                });
+                $('#menuStyle-0').on('click', function() {
+                    $('#home1').show();
+                    $('#home2').hide();
+                });
+                
+                $('#contactMenu').on('click', function() {
+                    $('#home2').show();
+                    $('#home1').hide();
+                });
 
-      <div id="menuBox">
-        <ul>
-          <li ng-repeat="menu in box">
-            <div class="menuStyle" id="{{'menuStyle-' + $index}}" ng-bind="menu"></div>
-          </li>
-        </ul>
-        <div id="picture">
-        </div>
+                $('#localisationMenu').on('click', function () {
+                    $('#myModal').modal();
+                    var map;
+                    var myLatLng = new google.maps.LatLng(48.87022, 2.30603);
+                    var mapOptions =
+                    {
+                        zoom: 24,
+                        center: myLatLng,
+                        disableDefaultUI: true,
+                        panControl: true,
+                        zoomControl: true,
+                        mapTypeControl: true,
+                        scaleControl: true,
+                        streetViewControl: true,
+                        overviewMapControl: true
+                    };
+                    map = new google.maps.Map(document.getElementById('localisationMap'), mapOptions);
 
-        <div id="diapo">
-          <div id="myCarousel" class="carousel slide carousel-fade">
-            <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-            <!-- Carousel items -->
-            <div class="carousel-inner">
-              <div class="active item">
-                <img src="../images/test.jpg" alt="">
-                <div class="carousel-caption">
-                  <h4>Haricots Blanc</h4>
-                  <p>test zzzz</p>
+                    var windowContent = 'test';
+                    var infoWindow = new google.maps.InfoWindow( {
+                        content: windowContent
+                    });
+
+                    var marker = new google.maps.Marker( {
+                        position: myLatLng,
+                        map: map,
+                        title: "MDC"
+                    });
+
+                    infoWindow.open(map, marker);
+                    google.maps.event.addListener(marker, 'click', function() {
+                        infoWindow.open(map, marker);
+                    });
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div id="header">
+            <div id="topLane">
+                <div id="logoContainer">
+                    <div id="logo">
+                        <img src="../images/logo.gif">
+                    </div>
                 </div>
-              </div>
-              <div class="item">
-                <img src="../images/test.jpg" alt="">
-                <div class="carousel-caption">
-                  <h4>Haricots Bleu</h4>
-                  <p>test yyyy</p>
+                 <div id="sloganContainer">
+                    <div id="slogan">
+                        Nikos aliagas est un FDP
+                    </div>
                 </div>
-              </div>
-              <div class="item">
-                <img src="../images/test.jpg" alt="">
-                <div class="carousel-caption">
-                  <h4>Haricots Rouge</h4>
-                  <p>test www</p>
+            </div>
+        </div>
+  
+        <div id="menuContainer">
+            <div id="menuBox">
+                <ul>
+                    <li ng-repeat="menu in box">
+                        <div class="menuStyle" id="{{'menuStyle-' + $index}}" ng-bind="menu"></div>
+                    </li>
+                </ul>
+                <div id="picture">
                 </div>
-              </div>
+
+                <div id="diapo">
+                    <div id="myCarousel" class="carousel slide carousel-fade">
+                        <ol class="carousel-indicators">
+                          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                          <li data-target="#myCarousel" data-slide-to="1"></li>
+                          <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="active item">
+                                <img src="../images/test.jpg" alt="">
+                                <div class="carousel-caption">
+                                    <h4>Haricots Blanc</h4>
+                                    <p>test zzzz</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="../images/test.jpg" alt="">
+                                <div class="carousel-caption">
+                                    <h4>Haricots Bleu</h4>
+                                    <p>test yyyy</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="../images/test.jpg" alt="">
+                                <div class="carousel-caption">
+                                    <h4>Haricots Rouge</h4>
+                                    <p>test www</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Carousel nav -->
+                        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                    </div>
+                </div>
             </div>
-            <!-- Carousel nav -->
-            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-          </div>
+        </div>
+        
+        <div id="contentContainer">
+            <div id="contentMain">
+                <div id="leftSideMenus">
+                    <div id="contactMenu">
+                        <div id="contactImage">
+                            <div id="contactImageTextHeader">
+                                Contactez-nous</br>
+                            </div>
+                            <div id="contactImageText">
+                                Vous souhaitez passer commande ?</br>
+                                Vous voulez de plus ample informations ?</br>
+                            </div>
+                            <div id="contactImageBack">
+                            </div>
+                        </div>
+                        <div id="contactLink">
+                            CONTACTEZ-NOUS
+                        </div>
+                    </div>
+                    <div id="localisationMenu">
+                        <div id="localisationImage">
+                            <div id="localisationImageTextHeader">
+                                Plan d'accÃ¨s
+                            </div>
+                            <div id="localisationImageText">
+                                Vous allez Ãªtre re-dirigÃ©<br/>
+                                vers Google Maps ...<br/>
+                            </div>
+                            <div id="localisationImageBack">
+                            </div>
+                        </div>
+                        <div id="localisationLink">
+                            PLAN D'ACCÃ‰S
+                        </div>
+                    </div>
+                </div>
+
+                <div id="mainMenu">
+
+                    <!-- homepage -->
+                    <div id="home1">
+                        <div id="homeTitle1">Mediterranean Distribution Company</div></br>
+                        <div id="homeSlogan">Nikos aliagas est un FDP</div></br>
+                        <div id="homePresentation">Bienvenue chez MDC, importateur-exportateur de produits agroalimentaires.</div></br>
+                        <div id="homePDG">"Notre force, c'est de disposer d'un large Ã©ventail de compÃ©tences, de maniÃ¨re Ã  proposer Ã  nos clients une gamme Ã©tendue de produits agroalimentaires Ã  faible coÃ»t et livrer dans les meilleurs dÃ©lais."</br></br>Georges BENZAHRA, Directeur</div>
+                        <div id="vegetablesContainer">link sur la vitrine avc seulement les lÃ©gumes secs</div>
+                        <div id="fruitsContainer">link sur la vitrine avc seulement les fruits secs</div>
+                    </div>
+
+                    <!-- page contact -->
+                    <div id="home2">
+                        <div id="homeTitle2">Mediterranean Distribution Company</div></br>
+                        <div id="contactUsTitle">Contactez-nous</div>
+                        <div id="contactUsText">Pour nous contacter vous trouverez nos coordonnÃ©es ci-dessous ou bien via notre formulaire. Nous vous rÃ©pondrons dans les plus bref dÃ©lais</br></br>Merci de votre intÃ©rÃªt pour MDC !</div>
+                        <div id="contactInfoTitle">Nos coordonnÃ©es</div>
+                        <div id="contactInfoText"><b>MDC</b></br>66, Avenue des Champs-ElysÃ©es Lot 41</br>75008 PARIS</br>TÃ©l. : (+0033) 06 52 86 17 93</br>Fax : N/A</br>Mail : mdc.negoce@gmail.com</div>
+                        <div id="formulaire">un formulaire en cours</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+        <div id="footer">
+            <div id="footerLinks">
+                Liens et aide au rÃ©fÃ©rencement ici
+            </div>
         </div>
 
-      </div>
-    </div>
-    <div id="contentContainer">
-      <div id="contentMain">
-
-        <div id="leftSideMenus">
-          <div id="contactMenu">
-            <div id="contactImage">
-              <div id="contactImageTextHeader">
-                Contactez-nous</br>
-              </div>
-              <div id="contactImageText">
-                Vous souhaitez passer commande ?</br>
-                Vous voulez de plus ample informations ?</br>
-              </div>
-              <div id="contactImageBack">
-              </div>
+        <!-- modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Localisation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="localisationTitle">Plan d'accÃ©s</div>
+                        <div id="localisationMap"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    </div>
+                </div>
             </div>
-            <div id="contactLink">
-              CONTACTEZ-NOUS
-            </div>
-          </div>
-          <div id="localisationMenu">
-            <div id="localisationImage">
-              <div id="localisationImageTextHeader">
-                Plan d'accès
-              </div>
-              <div id="localisationImageText">
-                Vous allez être re-dirigé<br/>
-                vers Google Maps ...<br/>
-              </div>
-              <div id="localisationImageBack">
-              </div>
-            </div>
-            <div id="localisationLink">
-              PLAN D'ACCÉS
-            </div>
-          </div>
         </div>
-
-        <div id="mainMenu">
-
-          <!-- homepage -->
-          <div id="home1">
-            <div id="homeTitle">Mediterranean Distribution Company</div></br>
-            <div id="homeSlogan">Nikos aliagas est un FDP</div></br>
-            <div id="homePresentation">Bienvenue chez MDC, importateur-exportateur de produits agroalimentaires.</div></br>
-            <div id="homePDG">"Notre force, c'est de disposer d'un large éventail de compétences, de manière à proposer à nos clients une gamme étendue de produits agroalimentaires à faible coût et livrer dans les meilleurs délais."</br></br>Georges BENZAHRA, Directeur</div>
-
-            <div id="vegetablesContainer">link sur la vitrine avc seulement les légumes secs</div>
-            <div id="fruitsContainer">link sur la vitrine avc seulement les fruits secs</div>
-          </div>
-
-          <!-- page contact -->
-          <div id="home2">
-            <div id="homeTitle">Mediterranean Distribution Company</div></br>
-            <div id="contactUsTitle">Contactez-nous</div>
-            <div id="contactUsText">Pour nous contacter vous trouverez nos coordonnées ci-dessous ou bien via notre formulaire. Nous vous répondrons dans les plus bref délais</br></br>Merci de votre intérêt pour MDC !</div>
-            <div id="contactInfoTitle">Nos coordonnées</div>
-            <div id="contactInfoText"><b>MDC</b></br>66, Avenue des Champs-Elysées Lot 41</br>75008 PARIS</br>Tél. : (+0033) 06 52 86 17 93</br>Fax : N/A</br>Mail : mdc.negoce@gmail.com</div>
-            <div id="formulaire">un formulaire en cours</div>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </body>
-  <footer>
-    <div id="footerLinks">
-      Liens et aide au référencement ici
-    </div>
-  </footer>
-
-<!-- modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Localisation</h4>
-      </div>
-      <div class="modal-body">
-        <div id="localisationTitle">Plan d'accés</div>
-        <div id="localisationMap"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+    </body>
 </html>
